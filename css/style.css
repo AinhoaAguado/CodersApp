@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -14,18 +15,56 @@
     --bg-color: black;
 
     --font-family: "sans-serif";
-    --fontS-title: 1.5rem;
+    --fontS-title: 1.6rem;
     --fontS-text: 1.2rem;
 
     --padding-btn: 0.8em;
     --border-radius-btn: 10px;
 }
 
+body {
+    display: grid;
+    grid-template-areas: 
+    "title",
+    "sectionCoders",
+    "sectionAddDelete",
+    "sectionSelect",
+    "SectionGroups"
+}
+
+
 nav {
     background: var(--degree-secondary);
     padding: 0.7em 2em;
+}
+.title {
+    grid-area: "title";
 }
 .txtDestacado{
     color: var(--primary-color);
 }
 
+.mainIndex {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+.title {
+    color: var(--white-color);
+    font-size: var(--fontS-title);
+    margin-bottom: 30px;
+}
+
+.mainIndex__section {
+    height: 20vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.mainIndex__section img {
+    height: 8em;
+}
