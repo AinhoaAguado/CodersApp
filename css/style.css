@@ -15,31 +15,18 @@
     --bg-color: black;
 
     --font-family: "sans-serif";
-    --fontS-title: 1.6rem;
+    --fontS-title: 1.4rem;
     --fontS-text: 1.2rem;
 
     --padding-btn: 0.8em;
     --border-radius-btn: 10px;
 }
 
-body {
-    display: grid;
-    grid-template-areas: 
-    "title",
-    "sectionCoders",
-    "sectionAddDelete",
-    "sectionSelect",
-    "SectionGroups"
-}
-
-
-nav {
+.headerIndex__nav {
     background: var(--degree-secondary);
     padding: 0.7em 2em;
 }
-.title {
-    grid-area: "title";
-}
+
 .txtDestacado{
     color: var(--primary-color);
 }
@@ -58,13 +45,15 @@ nav {
     margin-bottom: 30px;
 }
 
-.mainIndex__section {
-    height: 20vh;
+.mainIndex__section a{
     margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: 1px solid #622C76;
+    text-decoration: none;
 }
 
 .mainIndex__section img {
-    height: 8em;
+    height: 6em;
 }
