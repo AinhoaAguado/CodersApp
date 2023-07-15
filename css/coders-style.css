@@ -1,0 +1,17 @@
+body {
+  background-color: #282828;
+}
+body .main .main__coders {
+  margin-top: 5vh;
+  padding-left: 3vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+body .main .main__coders .main__coder {
+  background-color: azure;
+  width: 15vw;
+  margin: 0.5em 0.5em;
+}
+
+/*# sourceMappingURL=coders-style.css.map */
