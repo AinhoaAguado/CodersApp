@@ -8,8 +8,8 @@ body{
     .main{
         
         .main__coders{
-            padding: 0.2em;
-            margin-top: 5vh;
+            padding: 0.8em;
+            margin-top: 1vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             
@@ -18,10 +18,13 @@ body{
             display:flex;
             flex-direction: column;
             width: 100%;
+            margin-top: 0.5em;
         }
         .main__coder__img{
             width: 90%;
             border-radius: 50%;
+            margin-top: 0.35em;
+            padding-top: 1em;
         }
         .main__coder__text{
             width:100%;
@@ -36,8 +39,8 @@ body{
     .main{
         
         .main__coders{
-            padding: 0.2em;
-            margin-top: 5vh;
+            padding: 1.4em;
+            margin-top: 3vh;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             
@@ -46,10 +49,13 @@ body{
             display:flex;
             flex-direction: column;
             width: 100%;
+            margin-top: 0.5em;
         }
         .main__coder__img{
             width: 100%;
             border-radius: 50%;
+            margin-top: 0.45em;
+            padding-top: 1em;
         }
         .main__coder__text{
             width:100%;
