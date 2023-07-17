@@ -1,8 +1,8 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--white-color);
 }
 
 :root {
@@ -15,45 +15,127 @@
     --bg-color: black;
 
     --font-family: "sans-serif";
-    --fontS-title: 1.4rem;
-    --fontS-text: 1.2rem;
+    /* overpass mono */
+    --fontS-title: 1.2rem;
+    --fontS-subtitle: .9rem;
+    --fontS-links: 1rem;
 
     --padding-btn: 0.8em;
     --border-radius-btn: 10px;
 }
 
 .headerIndex__nav {
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
     background: var(--degree-secondary);
-    padding: 0.7em 2em;
-}
-
-.txtDestacado{
-    color: var(--primary-color);
+    height: 7vh;
 }
 
 .mainIndex {
-    padding: 2em;
+    background-color: var(--bg-color);
+    height: 93vh;
+}
+
+.title {
+    font-size: var(--fontS-title);
+    padding: 2em 0;
+    line-height: 1.2em;
+    text-align: center;
+    display: block;
+}
+
+.subtitle {
+    display: none;
+}
+
+.mmainIndex__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    background-color: var(--bg-color);
-}
-.title {
-    color: var(--white-color);
-    font-size: var(--fontS-title);
-    margin-bottom: 30px;
 }
 
-.mainIndex__section a{
-    margin: auto;
+.mmainIndex__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.txtDestacado {
+    color: var(--primary-color);
+}
+
+.mainIndex__section a {
+    margin: auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #622C76;
     text-decoration: none;
 }
 
-.mainIndex__section img {
+.mainIndex__section div {
+    width: 50%;
+}
+
+.mainIndex__section__img {
+    text-align: right;
+    padding-right: 1em;
+    height: 100%;
+    width: auto;
+    margin: 0.5em 0;
+}
+
+.mainIndex__section__img img {
     height: 6em;
+}
+
+.mainIndex__section h3 {
+    text-align: left;
+}
+
+@media (min-width: 900px) {
+
+    .title {
+        display: none;
+    }
+
+    .subtitle {
+        display: block;
+        width: 60vw;
+        margin: auto;
+        font-size: var(--fontS-subtitle);
+        padding: 3em 0;
+        line-height: 1.3em;
+        text-align: center;
+    }
+
+    .mainIndex__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100vw;
+        justify-content: space-around;
+    }
+    
+    .mainIndex__section {
+        width: 25%;
+    }
+    .mainIndex__section a {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .mainIndex__section__img {
+        text-align: center;
+        padding-right: 0em;
+    }
+    
+    .mainIndex__section__img img {
+        height: 6em;
+    }
+
+    .mainIndex__section h3 {
+        text-align: center;
+    }
 }
