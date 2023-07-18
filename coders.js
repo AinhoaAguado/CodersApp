@@ -114,14 +114,32 @@ let coders = [
   document.getElementById("formulario").addEventListener("submit", function(e) {
     e.preventDefault();
   
-    const name = document.getElementById("name").value;
-    const apellidos = document.getElementById("apellidos").value;
+    let name = document.getElementById("name").value;
+    let apellidos = document.getElementById("apellidos").value;
   
-    const coder = new Coder(name, apellidos);
+    let coder = new Coder(name, apellidos);
   
     const ui = new UI();
     ui.addCoder(coder);
-  });
+
+
+    mostrarCoders()
+
+  //---------------------------------------------------
+  //Contacto con el servidor
+
+    fetch("https://page-backend-api.onrender.com/agregar-datos", {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(coder)
+  })
+      .then(response => response.json())
+      .then(coder => {
+      console.log('Respuesta del servidor:', coder);
+      })
   
-  // Llamada inicial para mostrar los coders
-  mostrarCoders();
+  });
+
+  
