@@ -1,4 +1,5 @@
 
+
 let coders = [
     {
       nombre: 'Victor'
@@ -116,6 +117,11 @@ let coders = [
     // ...
   }
   
+  coders.forEach(coder => {
+    coder.img = obtenerImagenAleatoria();
+  });
+  console.log(coders)
+  
   // Evento submit del formulario
   document.getElementById("formulario").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -128,24 +134,44 @@ let coders = [
     const ui = new UI();
     ui.addCoder(coder);
 
+    fetch("https://page-backend-api.onrender.com/agregar-datos", {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(coder)
+})
+  .then(response => response.json())
+  .then( coder => {
+  console.log('Respuesta del servidor:', coder);
+  })
+});
 
-    mostrarCoders()
 
-  //---------------------------------------------------
+
+  //-------------------------------------
   //Contacto con el servidor
 
-    fetch("https://page-backend-api.onrender.com/agregar-datos", {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(coder)
+const button = document.querySelector(".add__button").addEventListener("click",function(){
+
+  const datos = coders
+
+fetch("https://page-backend-api.onrender.com/agregar-datos", {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(datos)
+})
+  .then(response => response.json())
+  .then( datos => {
+  console.log('Respuesta del servidor:', datos);
   })
-      .then(response => response.json())
-      .then(coder => {
-      console.log('Respuesta del servidor:', coder);
-      })
-  
-  });
+});
+
+
+
+
+  mostrarCoders();
 
   
