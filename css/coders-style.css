@@ -1,17 +1,16 @@
 body{
-  display: flex;
-  align-items: center;
+  margin: 0;
   background-color: #282828;
   font-family: 'Overpass Mono', monospace;
-  background-color: #282828;
   color: white;    
-  margin: 0%;
 }
 
-.container{
-
+.formu{
+  text-decoration: none;
+  color: white;
+  font-family: 'Overpass Mono', monospace;
+  width: max-content;
 }
-
 
 #container__barra{
   display: flex;
@@ -39,6 +38,7 @@ body{
   border-radius: 10px;
   border: 0;
   padding: 5%;
+  font-family: 'Overpass Mono', monospace;
 }
 
 .button {
@@ -139,6 +139,7 @@ strong{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10vh;
 }
 
 .add__title {
