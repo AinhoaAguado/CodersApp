@@ -1,3 +1,14 @@
+/*Primero, se define un array llamado coders, que contiene objetos con el nombre de diferentes personas.
+
+Se crea un array llamado imagenesDisponibles con números del 1 al 36. Esta lista representa imágenes disponibles para mostrar.
+
+La función obtenerImagenAleatoria() elige una imagen aleatoria de la lista imagenesDisponibles y la devuelve como una ruta de imagen.
+
+La función mostrarCoders() muestra visualmente a los coders en la página web, cada uno con una imagen aleatoria y su nombre.
+
+Cuando se envía el formulario, se crea un nuevo objeto Coder, se agrega al array coders y se llama a mostrarCoders() para mostrarlo en la página.*/ 
+
+
 
 let coders = [
     {
@@ -131,3 +142,8 @@ let coders = [
   
   // Llamada inicial para mostrar los coders
   mostrarCoders();
+
+
+  export function mostrarCoders() {
+    mostrarCoders()
+  }
