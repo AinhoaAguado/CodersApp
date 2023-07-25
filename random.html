@@ -10,8 +10,12 @@
 <body>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
-      </style>
+    </style>
     <section class="container">
+        <div class="audio">
+            <audio src="./mario-fall.mp3" id="mario"></audio>
+            <audio src="./musica-suspenso- .mp3" id="suspenso"></audio>
+        </div>
         <div id="container__barra">
             <h1 class="barra__logo"> Coders<strong>App</strong></h1>
         </div>
@@ -20,10 +24,48 @@
             <p class="texto">
                 Selecciona un Coder de forma aleatoria.
             </p>
+            <div class="resultado">
+                <!-- Aquí se mostrará el Coder seleccionado -->
+            </div>
         </div>
+        
+        <div class="loader">
+            <!-- Código de la animación -->
+            <div class="box box0">
+                <div></div>
+            </div>
+            <div class="box box1">
+                <div></div>
+            </div>
+            <div class="box box2">
+                <div></div>
+            </div>
+            <div class="box box3">
+                <div></div>
+            </div>
+            <div class="box box4">
+                <div></div>
+            </div>
+            <div class="box box5">
+                <div></div>
+            </div>
+            <div class="box box6">
+                <div></div>
+            </div>
+            <div class="box box7">
+                <div></div>
+            </div>
+            <div class="ground">
+                <div></div>
+            </div>
+        </div>
+
         <div>
             <button id="btn-seleccion" class="seleccion">Selecciona al elegido</button>
             <button href="./inicio/inicio.html" class="home btn-inicio">Inicio</button>
+        </div>
+        <div class="lista-coders">
+            <!-- Aquí se mostrará la lista de Coders que ya han aparecido -->
         </div>
     </section>
     <script type="module" src="random.js"></script>
