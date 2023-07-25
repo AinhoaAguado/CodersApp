@@ -97,7 +97,7 @@ let coders = [
   class Coder {
     constructor(nombre) {
       this.nombre = nombre;
-      this.imagen = obtenerImagenAleatoria(); // Asignar una imagen aleatoria al crear el objeto
+      this.src = obtenerImagenAleatoria(); // Asignar una imagen aleatoria al crear el objeto
     }
   }
   
@@ -118,7 +118,7 @@ let coders = [
   }
   
   coders.forEach(coder => {
-    coder.img = obtenerImagenAleatoria();
+    coder.src = obtenerImagenAleatoria();
   });
   console.log(coders)
   
