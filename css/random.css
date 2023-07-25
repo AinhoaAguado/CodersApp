@@ -47,6 +47,7 @@ strong{
     align-items: center;
     margin-top: 5vh;
     font-family: 'Overpass Mono', monospace;
+    cursor: pointer;
 }
 
 .home{
@@ -139,6 +140,13 @@ strong{
         100% {
           transform: scale3d(1, 1, 1);
         }
+      }
+
+      .nuevoElementoImagen, .nuevoElementoNombre {
+        --auto-grid-min-size: 16rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+        grid-gap: 1rem;
       }
       
 
