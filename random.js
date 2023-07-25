@@ -26,16 +26,16 @@ const btn = document.getElementById("btn-seleccion");
 btn.disabled = true;
 
 // obtenemos referencia del audio
-const audio = document.getElementById("mario")
-const audioSuspenso = document.getElementById("suspenso")
+const audio = document.getElementById("mario");
+const audioSuspenso = document.getElementById("suspenso");
 
 //hacemos la funcion para reproducirlo
 function reproducirAudio(){
-  audio.play()
+  audio.play();
 }
 
 function reproducirSuspenso(){
-  audioSuspenso.play()
+  audioSuspenso.play();
 }
 
 // Creamos una copia del array original de los coders
@@ -64,7 +64,7 @@ function cargarMostrarImagenAleatoria() {
 
   // Establecemos un tiempo de espera (en milisegundos) antes de mostrar al coder seleccionado
   const tiempoEspera = 3000; // 3 segundos
-  reproducirSuspenso()
+  reproducirSuspenso();
   setTimeout(function() {
     // Ocultamos la animación de carga
     document.querySelector(".loader").style.display = "none";
@@ -95,7 +95,12 @@ function cargarMostrarImagenAleatoria() {
 }
 
 // Agregamos un evento de clic al botón para ejecutar la función
-btn.addEventListener("click", cargarMostrarImagenAleatoria);
+btn.addEventListener("click", async function(){
+  const url = "https://page-backend-api.onrender.com/datos";
+ await obtenerDatosDelServidor(url);
+ actualizarListaCodersMostrados();
+ cargarMostrarImagenAleatoria();
+});
 
 // Función para generar un número entero aleatorio dentro de un rango
 function generarEnteroAleatorio(cantidadImagenes) {
@@ -139,10 +144,17 @@ function actualizarListaCodersMostrados() {
   // Limpiamos el contenido previo en caso de que exista
   listaCodersArea.innerHTML = "";
 
-  // Recorremos el arreglo de Coders mostrados y creamos elementos de párrafo para cada uno
+  // Recorremos el arreglo de Coders mostrados y creamos elementos de párrafo e imagen para cada uno
   codersMostrados.forEach(coder => {
     let nuevoElementoNombre = document.createElement("p");
     nuevoElementoNombre.textContent = coder.nombre;
+
+    let nuevoElementoImagen = document.createElement("img");
+    nuevoElementoImagen.src = coder.src;
+    nuevoElementoImagen.width = 100;
+    nuevoElementoImagen.height = 100;
+
     listaCodersArea.appendChild(nuevoElementoNombre);
+    listaCodersArea.appendChild(nuevoElementoImagen);
   });
 }
