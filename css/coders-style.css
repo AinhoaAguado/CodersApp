@@ -197,9 +197,13 @@ strong{
 }
 
 #contenedor-coders{
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;*/
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
 }
 
 /*--------------- ADD/DELETE ----------------*/
@@ -495,5 +499,8 @@ input {
     padding-top: 1.5em;
   }
 }
+
+
+
 
 /*# sourceMappingURL=coders-style.css.map */
