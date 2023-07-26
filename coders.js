@@ -1,38 +1,85 @@
 
 
 let coders = [
-    {
-      nombre: 'Victor'
+  { 
+    nombre: "Adriana" 
+  },
+  { 
+    nombre: "Ainhoa" 
+  },
+  { 
+    nombre: "Andrea" 
+  },
+  { 
+    nombre: "Bryan" 
+  },
+  { 
+    nombre: "Cynthia" 
+  },
+  { 
+    nombre: "Diego A" 
+  },
+  { 
+    nombre: "Diego B" 
+  },
+  { 
+    nombre: "Emily" 
+  },
+  { 
+    nombre: "Fernando" 
+  },
+  {
+    nombre: "Geovanny"
     },
-    {
-      nombre: 'Jassed2'
-    },
-    {
-      nombre: 'Jassed3'
-    },
-    {
-      nombre: 'Jassed4'
-    },
-    {
-      nombre: 'Jassed5'
-    },
-    {
-      nombre: 'Jassed6'
-    },
-    {
-      nombre: 'Jassed7'
-    },
-    {
-      nombre: 'Jassed8'
-    },
-    {
-      nombre: 'Jassed9'
-    },
-    {
-      nombre: 'Jassed10'
-    }
-  ];
-  
+  { 
+    nombre: "Gisela" 
+  },
+  { 
+    nombre: "Jaime" 
+  },
+  { 
+    nombre: "Jassed" 
+  },
+  { 
+    nombre: "Jes" 
+  },
+  { 
+    nombre: "Jimmy" 
+  },
+  { 
+    nombre: "Jorge" 
+  },
+  { 
+    nombre: "Luis" 
+  },
+  { 
+    nombre: "Luis" 
+  },
+  { 
+    nombre: "Pedro"
+  },
+  { 
+    nombre: "Raúl" 
+  },
+  { 
+    nombre: "Rubén" 
+  },
+  { 
+    nombre: "Sophia" 
+  },
+  { 
+    nombre: "Thuanny" 
+  },
+  { 
+    nombre: "Víctor" 
+  },
+  { 
+    nombre: "Virginia"
+  },
+  { 
+    nombre: "Wanda" 
+  }
+];
   // Array para almacenar las imágenes disponibles
   let imagenesDisponibles = Array.from(Array(36), (_, index) => index + 1);
   
@@ -161,7 +208,7 @@ let coders = [
 const button = document.querySelector(".add__button").addEventListener("click",function(){
 
   const datos = coders
-  
+
 fetch("https://page-backend-api.onrender.com/agregar-datos", {
   method: 'POST',
   headers: {
