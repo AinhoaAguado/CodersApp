@@ -109,6 +109,75 @@ body{
 .btn-add {
   display: flex;
   justify-content: center;
+  position: relative;
+  width: 150px;
+  height: 55px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  box-shadow: 0px 10px 10px #f5a26f inset,
+  0px 5px 10px rgba(5, 5, 5, 0.212),
+  0px -10px 10px #79442e inset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-add::before {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.678);
+  content: "";
+  filter: blur(1px);
+  top: 7px;
+  border-radius: 50%;
+}
+
+.btn-add::after {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.137);
+  content: "";
+  filter: blur(1px);
+  bottom: 7px;
+  border-radius: 50%;
+}
+
+.btn-add:hover {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 img{
@@ -129,9 +198,13 @@ strong{
 }
 
 #contenedor-coders{
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;*/
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
 }
 
 /*--------------- ADD/DELETE ----------------*/
@@ -175,7 +248,7 @@ input {
   
 }
 
-.add__button {
+/*.add__button {
   margin-top: 10%;
   background: linear-gradient(#F67221, #884D34);
   color: white;
@@ -184,11 +257,84 @@ input {
   border-radius: 10px;
   border: 0;
   padding: 5%;
+}*/
+
+.add__button {
+  position: relative;
+  width: 150px;
+  height: 55px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background: linear-gradient(#F67221, #884D34);
+  box-shadow: 0px 10px 10px #f5a26f inset,
+  0px 5px 10px rgba(5, 5, 5, 0.212),
+  0px -10px 10px #79442e inset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.add__button a{
-  color: white;
+.add__button::before {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.678);
+  content: "";
+  filter: blur(1px);
+  top: 7px;
+  border-radius: 50%;
 }
+
+.add__button::after {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.137);
+  content: "";
+  filter: blur(1px);
+  bottom: 7px;
+  border-radius: 50%;
+}
+
+.add__button:hover {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+
 
 .add__section__button {
   display: flex;
@@ -354,5 +500,8 @@ input {
     padding-top: 1.5em;
   }
 }
+
+
+
 
 /*# sourceMappingURL=coders-style.css.map */

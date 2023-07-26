@@ -1,13 +1,3 @@
-/*Primero, se define un array llamado coders, que contiene objetos con el nombre de diferentes personas.
-
-Se crea un array llamado imagenesDisponibles con números del 1 al 36. Esta lista representa imágenes disponibles para mostrar.
-
-La función obtenerImagenAleatoria() elige una imagen aleatoria de la lista imagenesDisponibles y la devuelve como una ruta de imagen.
-
-La función mostrarCoders() muestra visualmente a los coders en la página web, cada uno con una imagen aleatoria y su nombre.
-
-Cuando se envía el formulario, se crea un nuevo objeto Coder, se agrega al array coders y se llama a mostrarCoders() para mostrarlo en la página.*/ 
-
 
 
 let coders = [
@@ -107,7 +97,7 @@ let coders = [
   class Coder {
     constructor(nombre) {
       this.nombre = nombre;
-      this.imagen = obtenerImagenAleatoria(); // Asignar una imagen aleatoria al crear el objeto
+      this.src = obtenerImagenAleatoria(); // Asignar una imagen aleatoria al crear el objeto
     }
   }
   
@@ -127,20 +117,61 @@ let coders = [
     // ...
   }
   
+  coders.forEach(coder => {
+    coder.src = obtenerImagenAleatoria();
+  });
+  console.log(coders)
+  
   // Evento submit del formulario
   document.getElementById("formulario").addEventListener("submit", function(e) {
     e.preventDefault();
   
-    const name = document.getElementById("name").value;
-    const apellidos = document.getElementById("apellidos").value;
+    let name = document.getElementById("name").value;
+    let apellidos = document.getElementById("apellidos").value;
   
-    const coder = new Coder(name, apellidos);
+    let coder = new Coder(name, apellidos);
   
     const ui = new UI();
     ui.addCoder(coder);
-  });
-  
-  // Llamada inicial para mostrar los coders
+
+    fetch("https://page-backend-api.onrender.com/agregar-datos", {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(coder)
+})
+  .then(response => response.json())
+  .then( coder => {
+  console.log('Respuesta del servidor:', coder);
+  })
+});
+
+
+
+  //-------------------------------------
+  //Contacto con el servidor
+
+const button = document.querySelector(".add__button").addEventListener("click",function(){
+
+  const datos = coders
+
+fetch("https://page-backend-api.onrender.com/agregar-datos", {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(datos)
+})
+  .then(response => response.json())
+  .then( datos => {
+  console.log('Respuesta del servidor:', datos);
+  })
+});
+
+
+
+
   mostrarCoders();
 
-
+  
