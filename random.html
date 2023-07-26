@@ -8,19 +8,21 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/random.css">
+    
 </head>
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
-    </style>
+    <header id="index" class="headerIndex">
+        <nav class="headerIndex__nav">
+            <a href="#index"><img class="headerIndex__nav--img" src="img/logo/logo_CodersApp.png" alt="logotipo CodersApp S.L."></a>
+        </nav>
+    </header>
+
     <section class="container">
         <div class="audio">
             <audio src="./Audios/mario-fall.mp3" id="mario"></audio>
             <audio src="./Audios/musica-suspenso- .mp3" id="suspenso"></audio>
         </div>
-        <div id="container__barra">
-            <h1 class="barra__logo"> Coders<strong>App</strong></h1>
-        </div>
+
         <div class="contenido">
             <h1>Coder <strong>Elegido</strong></h1>
             <p class="texto">
@@ -61,10 +63,13 @@
             </div>
         </div>
 
-        <div>
-            <button id="btn-seleccion" class="seleccion">Selecciona al elegido</button>
-            <button href="./inicio/inicio.html" class="home btn-inicio">Inicio</button>
-        </div>
+        <div class="btnsContainer">
+            <button id="btn-seleccion" class="btn-inicio seleccion">Selecciona al elegido</button>
+            <div class="btnsReinicioMenu">
+                <button class="home btn-inicio tamaño2botones" id="reiniciar">Reiniciar</button>
+                <button class="home btn-inicio tamaño2botones" id="menuBtn">Menú</button>
+            </div>
+      </div>
         <div class="lista-coders">
             <!-- Aquí se mostrará la lista de Coders que ya han aparecido -->
         </div>

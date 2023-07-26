@@ -164,8 +164,25 @@ function actualizarListaCodersMostrados() {
     nuevoElementoImagen.src = coder.src;
     nuevoElementoImagen.width = 100;
     nuevoElementoImagen.height = 100;
-
-    listaCodersArea.appendChild(nuevoElementoNombre);
-    listaCodersArea.appendChild(nuevoElementoImagen);
+    
+    let nuevoElementoContainer = document.createElement("div");
+    nuevoElementoContainer.classList.add("containerMostrar")
+    listaCodersArea.appendChild(nuevoElementoContainer);
+    nuevoElementoContainer.appendChild(nuevoElementoNombre);
+    nuevoElementoContainer.appendChild(nuevoElementoImagen);
   });
+}
+
+// Función para reiniciar
+let reiniciarBtn = document.getElementById("reiniciar");
+reiniciarBtn.addEventListener("click", reiniciar) 
+function reiniciar () {
+  window.location.href = "random.html"
+}
+
+// Función para volver al menu
+let menuBtn = document.getElementById("menuBtn");
+menuBtn.addEventListener("click", irMenu) 
+function irMenu () {
+  window.location.href = "index.html"
 }

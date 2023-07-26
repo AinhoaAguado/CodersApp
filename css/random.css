@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
+
 body{
     margin: 0;
     font-family: 'Overpass Mono', monospace;
@@ -9,22 +11,9 @@ strong{
     color:#F67221
 }
 
-#container__barra{
-    display: flex;
-    align-items: center;
-    background: linear-gradient(#94508A, #390857) ;
-    width: 100%;
-    height: 83px;
-}
-
-.barra__logo{
-    display: flex;
-    font-weight: lighter;
-    margin-left: 6vh;
-    font-size: 2rem;
-}
-
 .contenido{
+    position: absolute;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -70,9 +59,27 @@ strong{
     align-items: center;
 }
 
+.containerMostrar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.lista-coders {
+  padding:1.4em;
+  margin-top: 3vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+}
+
+.btnsContainer {
+  margin-top: 27em;
+}
+
 .btn-inicio {
         position: relative;
-        width: 150px;
         height: 55px;
         border-radius: 10px;
         border: none;
@@ -84,7 +91,11 @@ strong{
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 1em;
       }
+.btn-inicio .tamaño2botones {
+  width: 150px;
+}
       
       .btn-inicio::before {
         width: 70%;
@@ -112,6 +123,10 @@ strong{
         animation: jello-horizontal 0.9s both;
       }
       
+      .btnsReinicioMenu {
+        display: flex;
+        justify-content: center;
+      }
       @keyframes jello-horizontal {
         0% {
           transform: scale3d(1, 1, 1);
@@ -153,17 +168,19 @@ strong{
 
       .loader {
         --duration: 3s;
-        --primary: rgba(39, 94, 254, 1);
-        --primary-light: #2f71ff;
+        --primary: rgba(117, 22, 148);
+        --primary-light:#9767B0;
         --primary-rgba: rgba(39, 94, 254, 0);
         width: 200px;
         height: 320px;
         position: relative;
         transform-style: preserve-3d;
         display: none;
+        z-index: -1 ;
+        margin-top: 6em;
       }
       
-      @media (max-width: 480px) {
+      @media (max-width: 250px) {
         .loader {
           zoom: 0.44;
         }
