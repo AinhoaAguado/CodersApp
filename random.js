@@ -44,20 +44,31 @@ let bufferImagenes = [];
 // Creamos un arreglo para almacenar los Coders que ya han aparecido
 let codersMostrados = [];
 
+// Creamos una variable para almacenar el identificador del setTimeout
+let alertTimeout;
+
 // Función para cargar y mostrar una imagen aleatoria
 function cargarMostrarImagenAleatoria() {
   // Verificamos si aún hay imágenes disponibles en el buffer
   if (bufferImagenes.length === 0) {
     // Si no quedan imágenes en el buffer, mostramos un mensaje o realizamos alguna acción
-    alert("No hay más coders disponibles");
+    // Creamos un setTimeout para mostrar el mensaje de alerta después de 3 segundos
+    alertTimeout = setTimeout(function() {
+      alert("No hay más coders disponibles");
+    }, 1000); // 3 segundos
 
-    // Restablecemos el buffer con una copia del array original de los coders
-    bufferImagenes = [...arraydatos];
+    // Restablecemos el buffer solo si no se han mostrado todos los coders disponibles
+    if (codersMostrados.length !== arraydatos.length) {
+      bufferImagenes = [...arraydatos];
+    }
     return;
   }
 
-  // Deshabilitamos el botón mientras se selecciona y muestra el coder
-  btn.disabled = true;
+  // Restauramos la visibilidad del botón para obtener un nuevo coder
+  btn.disabled = false;
+
+  // Cancelamos el setTimeout si el usuario hizo clic antes de que se muestre el mensaje de alerta
+  clearTimeout(alertTimeout);
 
   // Mostramos la animación de carga
   document.querySelector(".loader").style.display = "flex";

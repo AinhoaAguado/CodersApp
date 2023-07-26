@@ -144,6 +144,3 @@ let coders = [
   mostrarCoders();
 
 
-  export function mostrarCoders() {
-    mostrarCoders()
-  }
