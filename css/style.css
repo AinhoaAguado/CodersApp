@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 * {
     margin: 0;
@@ -29,3 +30,40 @@ nav {
     color: var(--primary-color);
 }
 
+=======
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--white-color);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #F67221;
+    --secondary-color-DARK: #622C76;
+    --secondary-color-LIGHT: #8B5094;
+    --white-color: white;
+    --degree-primary: linear-gradient(180deg, #F67221, #884D34);
+    --degree-secondary: linear-gradient(180deg, #622C76, #8B5094);
+    --bg-color: #282828;
+
+    --font-family: 'Overpass Mono', monospace;
+    --fontS-title: 1.2rem;
+    --fontS-subtitle: .9rem;
+    --fontS-links: 1rem;
+
+    --padding-btn: 0.8em;
+    --border-radius-btn: 10px;
+}
+
+.headerIndex__nav {
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    background: var(--degree-secondary);
+    height: 7vh;
+}
+>>>>>>> index
