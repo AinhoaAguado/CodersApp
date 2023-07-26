@@ -25,9 +25,7 @@
     --padding-btn: 0.8em;
     --border-radius-btn: 10px;
 }
-.headerIndex {
 
-}
 .headerIndex__nav {
     display: flex;
     align-items: center;

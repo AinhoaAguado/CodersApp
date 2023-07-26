@@ -5,12 +5,13 @@ body{
   color: white;    
 }
 
-.formu{
+.add__form-form input{
   text-decoration: none;
-  color: white;
+  color: black;
   font-family: 'Overpass Mono', monospace;
   width: max-content;
 }
+
 
 #container__barra{
   display: flex;
@@ -183,6 +184,10 @@ input {
   border-radius: 10px;
   border: 0;
   padding: 5%;
+}
+
+.add__button a{
+  color: white;
 }
 
 .add__section__button {
