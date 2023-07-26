@@ -9,6 +9,7 @@ function obtenerDatosDelServidor() {
     .then(datos => {
       arraydatos = datos;
       console.log(arraydatos);
+      
 
       // Una vez que los datos se han cargado, habilitamos el botón
       const button = document.getElementById("btn-seleccion");
@@ -50,10 +51,12 @@ function cargarMostrarImagenAleatoria() {
   if (bufferImagenes.length === 0) {
     // Si no quedan imágenes en el buffer, mostramos un mensaje o realizamos alguna acción
     alert("No hay más coders disponibles");
-
+    
     // Restablecemos el buffer con una copia del array original de los coders
     bufferImagenes = [...arraydatos];
+    
     return;
+
   }
 
   // Deshabilitamos el botón mientras se selecciona y muestra el coder
@@ -87,12 +90,13 @@ function cargarMostrarImagenAleatoria() {
     codersMostrados.push(imagenAleatoria);
 
     // Actualizamos la lista de Coders mostrados en el área correspondiente
-    actualizarListaCodersMostrados();
+    actualizarListaCodersMostrados(imagenAleatoria);
 
     // Restauramos la visibilidad del botón para obtener un nuevo coder
     btn.disabled = false;
   }, tiempoEspera);
 }
+
 
 // Agregamos un evento de clic al botón para ejecutar la función
 btn.addEventListener("click", cargarMostrarImagenAleatoria);
@@ -132,7 +136,7 @@ function mostrarResultado(imagenAleatoria) {
 }
 
 // Función para actualizar la lista de Coders mostrados en el área correspondiente
-function actualizarListaCodersMostrados() {
+function actualizarListaCodersMostrados(imagenAleatoria) {
   // Obtenemos el área donde mostraremos la lista de Coders
   const listaCodersArea = document.querySelector(".lista-coders");
 
@@ -144,5 +148,18 @@ function actualizarListaCodersMostrados() {
     let nuevoElementoNombre = document.createElement("p");
     nuevoElementoNombre.textContent = coder.nombre;
     listaCodersArea.appendChild(nuevoElementoNombre);
+
+    let nuevoElementoImagen = document.createElement("img");
+    nuevoElementoImagen.src = coder.src;
+    nuevoElementoImagen.height = 100;
+    nuevoElementoImagen.width = 100;
+    nuevoElementoImagen.setAttribute("data-nombre", imagenAleatoria.nombre);
+  
+    listaCodersArea.appendChild(nuevoElementoImagen);
   });
+
 }
+
+
+
+
