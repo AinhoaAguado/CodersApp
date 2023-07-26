@@ -99,9 +99,6 @@ let coders = [
   
 
 
-  
-
-
   // Clase Coder
   class Coder {
     constructor(nombre) {
@@ -164,9 +161,7 @@ let coders = [
 const button = document.querySelector(".add__button").addEventListener("click",function(){
 
   const datos = coders
-
-
-
+  
 fetch("https://page-backend-api.onrender.com/agregar-datos", {
   method: 'POST',
   headers: {
