@@ -18,19 +18,28 @@
     --bg-color: #282828;
 
     --font-family: 'Overpass Mono', monospace;
-    --fontS-title: 1.2rem;
-    --fontS-subtitle: .9rem;
+    --fontS-title: 1.4rem;
+    --fontS-subtitle: 1.1rem;
     --fontS-links: 1rem;
 
     --padding-btn: 0.8em;
     --border-radius-btn: 10px;
 }
 
-.headerIndex__nav {
+.headerIndex {
     display: flex;
     align-items: center;
     padding-left: 2em;
     background: var(--degree-secondary);
     height: 7vh;
     scroll-padding-top: 7vh;
+  }
+ 
+  .headerIndex__nav a{
+  text-decoration: none;
+  font-size: var(--fontS-title);
+
 }
+  .headerIndex__nav a span{
+ color: var(--primary-color);
+  }
