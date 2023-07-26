@@ -70,6 +70,7 @@ let coders = [
       botonEliminar.classList.add("button");
       botonEliminar.addEventListener("click", () => {
         eliminarCoder(coder);
+        
       });
 
       const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");svg.setAttribute("viewBox", "0 0 448 512");svg.classList.add("svgIcon");
@@ -87,12 +88,20 @@ let coders = [
     });
   }
 
+  
+
   function eliminarCoder(coder) {
     const indiceCoder = coders.findIndex(c => c.nombre === coder.nombre);
     coders.splice(indiceCoder, 1);
     mostrarCoders();
   }
+
   
+
+
+  
+
+
   // Clase Coder
   class Coder {
     constructor(nombre) {
@@ -114,7 +123,7 @@ let coders = [
       document.getElementById("apellidos").value = "";
     }
   
-    // ...
+ 
   }
   
   coders.forEach(coder => {
@@ -134,7 +143,7 @@ let coders = [
     const ui = new UI();
     ui.addCoder(coder);
 
-    fetch("https://page-backend-api.onrender.com/agregar-datos", {
+    fetch("https://page-backend-api.onrender.com/agregar-datosFormulario", {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json'
@@ -155,6 +164,8 @@ let coders = [
 const button = document.querySelector(".add__button").addEventListener("click",function(){
 
   const datos = coders
+
+
 
 fetch("https://page-backend-api.onrender.com/agregar-datos", {
   method: 'POST',
