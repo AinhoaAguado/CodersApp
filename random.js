@@ -167,9 +167,12 @@ function actualizarListaCodersMostrados(imagenAleatoria) {
     nuevoElementoImagen.src = coder.src;
     nuevoElementoImagen.width = 100;
     nuevoElementoImagen.height = 100;
-
-    listaCodersArea.appendChild(nuevoElementoNombre);
-    listaCodersArea.appendChild(nuevoElementoImagen);
+    
+    let nuevoElementoContainer = document.createElement("div");
+    nuevoElementoContainer.classList.add("containerMostrar")
+    listaCodersArea.appendChild(nuevoElementoContainer);
+    nuevoElementoContainer.appendChild(nuevoElementoNombre);
+    nuevoElementoContainer.appendChild(nuevoElementoImagen);
   });
 
 }
