@@ -27,16 +27,16 @@ const btn = document.getElementById("btn-seleccion");
 btn.disabled = true;
 
 // obtenemos referencia del audio
-const audio = document.getElementById("mario")
-const audioSuspenso = document.getElementById("suspenso")
+const audio = document.getElementById("mario");
+const audioSuspenso = document.getElementById("suspenso");
 
 //hacemos la funcion para reproducirlo
 function reproducirAudio(){
-  audio.play()
+  audio.play();
 }
 
 function reproducirSuspenso(){
-  audioSuspenso.play()
+  audioSuspenso.play();
 }
 
 // Creamos una copia del array original de los coders
@@ -45,29 +45,39 @@ let bufferImagenes = [];
 // Creamos un arreglo para almacenar los Coders que ya han aparecido
 let codersMostrados = [];
 
+// Creamos una variable para almacenar el identificador del setTimeout
+let alertTimeout;
+
 // Función para cargar y mostrar una imagen aleatoria
 function cargarMostrarImagenAleatoria() {
   // Verificamos si aún hay imágenes disponibles en el buffer
   if (bufferImagenes.length === 0) {
     // Si no quedan imágenes en el buffer, mostramos un mensaje o realizamos alguna acción
-    alert("No hay más coders disponibles");
-    
-    // Restablecemos el buffer con una copia del array original de los coders
-    bufferImagenes = [...arraydatos];
-    
+    // Creamos un setTimeout para mostrar el mensaje de alerta después de 3 segundos
+    alertTimeout = setTimeout(function() {
+      alert("No hay más coders disponibles");
+    }, 1000); // 3 segundos
+
+    // Restablecemos el buffer solo si no se han mostrado todos los coders disponibles
+    if (codersMostrados.length !== arraydatos.length) {
+      bufferImagenes = [...arraydatos];
+    }
     return;
 
   }
 
-  // Deshabilitamos el botón mientras se selecciona y muestra el coder
-  btn.disabled = true;
+  // Restauramos la visibilidad del botón para obtener un nuevo coder
+  btn.disabled = false;
+
+  // Cancelamos el setTimeout si el usuario hizo clic antes de que se muestre el mensaje de alerta
+  clearTimeout(alertTimeout);
 
   // Mostramos la animación de carga
   document.querySelector(".loader").style.display = "flex";
 
   // Establecemos un tiempo de espera (en milisegundos) antes de mostrar al coder seleccionado
   const tiempoEspera = 3000; // 3 segundos
-  reproducirSuspenso()
+  reproducirSuspenso();
   setTimeout(function() {
     // Ocultamos la animación de carga
     document.querySelector(".loader").style.display = "none";
@@ -99,7 +109,12 @@ function cargarMostrarImagenAleatoria() {
 
 
 // Agregamos un evento de clic al botón para ejecutar la función
-btn.addEventListener("click", cargarMostrarImagenAleatoria);
+btn.addEventListener("click", async function(){
+  const url = "https://page-backend-api.onrender.com/datos";
+ await obtenerDatosDelServidor(url);
+ actualizarListaCodersMostrados();
+ cargarMostrarImagenAleatoria();
+});
 
 // Función para generar un número entero aleatorio dentro de un rango
 function generarEnteroAleatorio(cantidadImagenes) {
@@ -143,18 +158,17 @@ function actualizarListaCodersMostrados(imagenAleatoria) {
   // Limpiamos el contenido previo en caso de que exista
   listaCodersArea.innerHTML = "";
 
-  // Recorremos el arreglo de Coders mostrados y creamos elementos de párrafo para cada uno
+  // Recorremos el arreglo de Coders mostrados y creamos elementos de párrafo e imagen para cada uno
   codersMostrados.forEach(coder => {
     let nuevoElementoNombre = document.createElement("p");
     nuevoElementoNombre.textContent = coder.nombre;
-    listaCodersArea.appendChild(nuevoElementoNombre);
 
     let nuevoElementoImagen = document.createElement("img");
     nuevoElementoImagen.src = coder.src;
-    nuevoElementoImagen.height = 100;
     nuevoElementoImagen.width = 100;
-    nuevoElementoImagen.setAttribute("data-nombre", imagenAleatoria.nombre);
-  
+    nuevoElementoImagen.height = 100;
+
+    listaCodersArea.appendChild(nuevoElementoNombre);
     listaCodersArea.appendChild(nuevoElementoImagen);
   });
 
