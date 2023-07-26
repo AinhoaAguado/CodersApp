@@ -1,5 +1,6 @@
 @import './style.css';
 
+
 .mainIndex {
     background-color: var(--bg-color);
     height: 93vh;
@@ -20,10 +21,11 @@
 
 .txtDestacado {
     color: var(--primary-color);
+    font-size: var(--fontS-subtitle);
 }
 
 .mainIndex__section {
-margin: 0.2em;
+    margin: 0.2em;
 }
 .mainIndex__section a {
     display: flex;
@@ -45,11 +47,11 @@ margin: 0.2em;
     0 0 20px var(--secondary-color-DARK),
     0 0 50px var(--secondary-color-DARK),
     0 0 100px var(--secondary-color-DARK);
-    background-color: rgba(139, 80, 148,0.4);
+    background-color: rgba(139, 80, 148,0.3);
 }
 
 .mainIndex__section div {
-    width: 50%;
+    width: 100%;
 }
 
 .mainIndex__section__img {
@@ -57,16 +59,17 @@ margin: 0.2em;
     padding-right: 1em;
     height: 100%;
     width: auto;
-    margin: .4em 0;
     transition: .4s;
 }
 
 .mainIndex__section__img img {
-    height: 6em;
+    height: 5.5em;
+    margin: .5em;
 }
 
 .mainIndex__section h3 {
     text-align: left;
+    font-size: .9em;
 }
 
 @media (min-width: 850px) {

@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--white-color);
+    font-family: 'Overpass Mono', monospace;
+
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500;600;700&display=swap");
@@ -18,7 +20,7 @@
     --bg-color: #282828;
 
     --font-family: 'Overpass Mono', monospace;
-    --fontS-title: 1.4rem;
+    --fontS-title: 1.5rem;
     --fontS-subtitle: 1.1rem;
     --fontS-links: 1rem;
 
@@ -38,8 +40,12 @@
   .headerIndex__nav a{
   text-decoration: none;
   font-size: var(--fontS-title);
-
 }
   .headerIndex__nav a span{
  color: var(--primary-color);
+  }
+
+  body{
+    background-color: var(--bg-color);
+    color: var(--white-color);    
   }

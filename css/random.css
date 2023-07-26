@@ -4,21 +4,25 @@ body{
     margin: 0;
     font-family: 'Overpass Mono', monospace;
     color: white;
-    background-color: #282828
+    background-color: #282828;
 }
 
 strong{
-    color:#F67221
+    color:#F67221;
 }
 
 .contenido{
     position: absolute;
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     padding: 5vh;
+}
+.title {
+  font-size: 1.4rem;
+  padding-bottom: .3em;
 }
 
 .seleccion{
@@ -35,7 +39,6 @@ strong{
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
-    font-family: 'Overpass Mono', monospace;
     cursor: pointer;
 }
 
@@ -53,6 +56,23 @@ strong{
     font-family: 'Overpass Mono', monospace;
 }
 
+#animacionPreviaLoader {
+  display: block;
+  position: absolute;
+  top: 200px;
+  width: 260px;
+  margin: auto;
+}
+#animacionPreviaLoader img{
+  width: 100%;
+  border: 6px solid #622C76;
+  border-radius: 50%;
+}
+
+
+.seleccionadoName {
+  margin: 10px;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -77,9 +97,14 @@ strong{
   align-items: center;
   flex-direction: row-reverse;
 }
+.containerMostrar-img {
+  border-bottom: 3px solid #622C76;
+  border-radius: 20px;
+  margin: .8em;
+}
 
 .btnsContainer {
-  margin-top: 27em;
+  margin-top: 28em;
 }
 
 .btn-inicio {
@@ -95,7 +120,7 @@ strong{
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 1em;
+        margin: 0.5em .7em;
       }
 .btn-inicio .tamaño2botones {
   width: 150px;
@@ -181,7 +206,7 @@ strong{
         transform-style: preserve-3d;
         display: none;
         z-index: -1 ;
-        margin-top: 6em;
+        margin-top: 7em;
       }
       
       @media (max-width: 250px) {

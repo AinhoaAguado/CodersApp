@@ -1,17 +1,9 @@
-body{
-  margin: 0;
-  background-color: #282828;
-  font-family: 'Overpass Mono', monospace;
-  color: white;    
-}
-
 .add__form-form input{
   text-decoration: none;
   color: black;
   font-family: 'Overpass Mono', monospace;
   width: max-content;
 }
-
 
 #container__barra{
   display: flex;
@@ -58,6 +50,8 @@ body{
     transition-duration: .3s;
     overflow: hidden;
     position: relative;
+    margin: .5em;
+
   }
   
   .svgIcon {
@@ -341,6 +335,10 @@ input {
   justify-content: center;
 }
 
+.add__section__button input{
+  color: white;
+  width: 150px;
+}
 
 .card{
   padding:5vw;

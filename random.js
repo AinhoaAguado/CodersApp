@@ -1,3 +1,4 @@
+
 // Creamos una variable global para almacenar los datos del servidor
 let arraydatos = [];
 
@@ -141,6 +142,7 @@ function mostrarResultado(imagenAleatoria) {
 
   // Creamos un nuevo elemento de párrafo en el DOM
   let nuevoElementoNombre = document.createElement("p");
+  nuevoElementoNombre.classList.add("seleccionadoName");
   nuevoElementoNombre.textContent = nombreImagenAleatoria;
 
   // Agregamos el nombre al documento HTML
@@ -157,32 +159,42 @@ function actualizarListaCodersMostrados() {
 
   // Recorremos el arreglo de Coders mostrados y creamos elementos de párrafo e imagen para cada uno
   codersMostrados.forEach(coder => {
-    let nuevoElementoNombre = document.createElement("p");
-    nuevoElementoNombre.textContent = coder.nombre;
-
+    
     let nuevoElementoImagen = document.createElement("img");
     nuevoElementoImagen.src = coder.src;
     nuevoElementoImagen.width = 100;
     nuevoElementoImagen.height = 100;
     
+    let nuevoElementoNombre = document.createElement("p");
+    nuevoElementoNombre.textContent = coder.nombre;
+    
     let nuevoElementoContainer = document.createElement("div");
-    nuevoElementoContainer.classList.add("containerMostrar")
+    nuevoElementoContainer.classList.add("containerMostrar");
     listaCodersArea.appendChild(nuevoElementoContainer);
-    nuevoElementoContainer.appendChild(nuevoElementoNombre);
     nuevoElementoContainer.appendChild(nuevoElementoImagen);
+    nuevoElementoImagen.classList.add("containerMostrar-img")
+    nuevoElementoContainer.appendChild(nuevoElementoNombre);
   });
 }
 
 // Función para reiniciar
-let reiniciarBtn = document.getElementById("reiniciar");
+const reiniciarBtn = document.getElementById("reiniciar");
 reiniciarBtn.addEventListener("click", reiniciar) 
 function reiniciar () {
   window.location.href = "random.html"
 }
 
 // Función para volver al menu
-let menuBtn = document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
 menuBtn.addEventListener("click", irMenu) 
 function irMenu () {
   window.location.href = "index.html"
 }
+
+
+/*
+let deleteImg = getElementsById("animacionPreviaLoader");
+btn.addEventListener("click", deleteImgPrevia)
+function deleteImgPrevia () {
+  document.getElementsById("animacionPreviaLoader").style.display = "none";
+}*/
