@@ -4,7 +4,16 @@ body{
     margin: 0;
     font-family: 'Overpass Mono', monospace;
     color: white;
-    background-color: #282828;
+    background-image:  linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.5)
+    ),
+    url(../img/mariobackground.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center; 
 }
 
 strong{
