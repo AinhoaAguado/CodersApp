@@ -90,7 +90,7 @@ let coders = [
     }
     const indiceAleatorio = Math.floor(Math.random() * imagenesDisponibles.length);
     const imagenAleatoria = imagenesDisponibles.splice(indiceAleatorio, 1)[0];
-    return `./Avatares sin fondo/${imagenAleatoria}.png`;
+    return `../Avatares sin fondo/${imagenAleatoria}.png`;
   }
   
   // Función para mostrar los coders en el contenedor
