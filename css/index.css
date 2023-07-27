@@ -1,0 +1,135 @@
+/* mainIndex */
+.mainIndex {
+    background-image:  linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.5)
+    ),
+    url(../img/mariobackground.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center; 
+    height: 93vh;
+    padding-bottom: 100px;
+    transform: translateX();
+}
+
+.title {
+    font-size: var(--fontS-title);
+    padding: 1.5em 0 1em 0;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+.subtitle {
+    display: none;
+}
+
+.txtDestacado {
+    color: var(--primary-color);
+    font-size: var(--fontS-subtitle);
+}
+/* mainIndex__section */
+.mainIndex__section {
+    margin: 0.2em;
+}
+.mainIndex__section a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    max-height: 300px;
+    margin: auto;
+    width: 70vw;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    transition: .4s;
+    background-color: transparent;
+    padding: 0 50px;
+}
+
+.mainIndex__section a:hover {
+    border: 3px solid var(--secondary-color-DARK);
+    box-shadow: 0 0 5px var(--secondary-color-DARK),
+    0 0 20px var(--secondary-color-DARK),
+    0 0 50px var(--secondary-color-DARK),
+    0 0 100px var(--secondary-color-DARK);
+    background-color: rgba(139, 80, 148,0.3);
+}
+
+.mainIndex__section div {
+    width: 100%;
+}
+
+.mainIndex__section__img {
+    text-align: right;
+    padding-right: 1em;
+    height: 100%;
+    width: auto;
+    transition: .4s;
+}
+
+.mainIndex__section__img img {
+    height: 5.5em;
+    margin: .5em;
+}
+
+.mainIndex__section h3 {
+    text-align: left;
+    font-size: .9em;
+}
+
+@media (min-width: 850px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        display: block;
+        margin: auto;
+        font-size: var(--fontS-subtitle);
+        padding: 0 0 2em 0;
+        line-height: 1.3em;
+        text-align: center;
+        width: 70vw;
+    }
+
+    .mainIndex__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80vw;
+        gap: .2em;
+        margin: auto;
+        justify-content: space-around;
+    }
+
+
+    .mainIndex__section a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 200px;
+        min-height: 220px;
+        padding: 1.5em 0 1em 0;
+        gap: .5em;
+    }
+    
+    .mainIndex__section__img {
+        text-align: center;
+        padding-right: 0em;
+    }
+    
+    
+    .mainIndex__section__img img {
+        transform: scale(1.2);
+        margin-bottom: 1em;
+    }
+
+    .mainIndex__section h3 {
+        text-align: center;
+    }
+}
+
