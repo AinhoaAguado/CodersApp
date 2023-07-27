@@ -12,6 +12,11 @@
 - Añadir nuevos alumnos a la lista.
 - Eliminar alumnos existentes de la lista.
 
+## Figma
+
+[Visita nuestro Figma](https://www.ejemplo.com](https://www.figma.com/file/8FIyZCdUK5R0c2BAPHga65/Py_CodersApp?type=design&node-id=56%3A7&mode=design&t=RxNrG28knuN3Ujuy-1))
+
+
 ## Capturas de pantalla
 
 ![Captura de pantalla 1](capturasreadme/CapturaSELECIONAR.png)
