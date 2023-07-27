@@ -43,7 +43,7 @@ const btn = document.getElementById("btn-seleccion");
 // Deshabilitamos el botón al inicio hasta que los datos se carguen
 btn.disabled = true;
 
-// Obtenemos referencia del audio
+// obtenemos referencia del audio
 const audio = document.getElementById("mario");
 const audioSuspenso = document.getElementById("suspenso");
 
@@ -62,17 +62,32 @@ let bufferImagenes = [];
 // Creamos un arreglo para almacenar los Coders que ya han aparecido
 let codersMostrados = [];
 
+// Creamos una variable para almacenar el identificador del setTimeout
+let alertTimeout;
+
 // Función para cargar y mostrar una imagen aleatoria
 function cargarMostrarImagenAleatoria() {
   // Verificamos si aún hay imágenes disponibles en el buffer
   if (bufferImagenes.length === 0) {
     // Si no quedan imágenes en el buffer, mostramos un mensaje o realizamos alguna acción
-    alert("No hay más coders disponibles");
+    // Creamos un setTimeout para mostrar el mensaje de alerta después de 3 segundos
+    alertTimeout = setTimeout(function() {
+      alert("No hay más coders disponibles");
+    }, 1000); // 3 segundos
+
+    // Restablecemos el buffer solo si no se han mostrado todos los coders disponibles
+    if (codersMostrados.length !== arraydatos.length) {
+      bufferImagenes = [...arraydatos];
+    }
     return;
+
   }
 
-  // Deshabilitamos el botón mientras se selecciona y muestra el coder
-  btn.disabled = true;
+  // Restauramos la visibilidad del botón para obtener un nuevo coder
+  btn.disabled = false;
+
+  // Cancelamos el setTimeout si el usuario hizo clic antes de que se muestre el mensaje de alerta
+  clearTimeout(alertTimeout);
 
   // Mostramos la animación de carga
   document.querySelector(".loader").style.display = "flex";
@@ -80,11 +95,10 @@ function cargarMostrarImagenAleatoria() {
   // Establecemos un tiempo de espera (en milisegundos) antes de mostrar al coder seleccionado
   const tiempoEspera = 3000; // 3 segundos
   reproducirSuspenso();
-  setTimeout(function(){
+  setTimeout(function() {
     document.getElementById("animacionPreviaLoader").style.display = "none";
-
-  }, 700);
-  setTimeout(function () {
+  },700);
+  setTimeout(function() {
     // Ocultamos la animación de carga
     document.querySelector(".loader").style.display = "none";
     // Obtenemos un índice aleatorio para seleccionar una imagen
@@ -93,25 +107,26 @@ function cargarMostrarImagenAleatoria() {
     // Obtenemos la imagen aleatoria según el índice obtenido
     let imagenAleatoria = bufferImagenes[indiceImagenAleatoria];
 
-    // Reproducimos el sonido
+    //reproducimos el sonido
     reproducirAudio();
 
     // Eliminamos la imagen seleccionada del buffer para evitar que se repita
     bufferImagenes.splice(indiceImagenAleatoria, 1);
 
-    // Agregamos el Coder a la lista de Coders mostrados
-    codersMostrados.push(imagenAleatoria);
-
     // Mostramos el Coder elegido en el área de resultado
     mostrarResultado(imagenAleatoria);
 
+    // Agregamos el Coder a la lista de Coders mostrados
+    codersMostrados.push(imagenAleatoria);
+
     // Actualizamos la lista de Coders mostrados en el área correspondiente
-    actualizarListaCodersMostrados();
+    actualizarListaCodersMostrados(imagenAleatoria);
 
     // Restauramos la visibilidad del botón para obtener un nuevo coder
     btn.disabled = false;
   }, tiempoEspera);
 }
+
 
 // Agregamos un evento de clic al botón para ejecutar la función
 btn.addEventListener("click", cargarMostrarImagenAleatoria);
@@ -144,6 +159,7 @@ function mostrarResultado(imagenAleatoria) {
 
   // Creamos un nuevo elemento de párrafo en el DOM
   let nuevoElementoNombre = document.createElement("p");
+  nuevoElementoNombre.classList.add("seleccionadoName");
   nuevoElementoNombre.textContent = nombreImagenAleatoria;
 
   // Agregamos el nombre al documento HTML
@@ -153,7 +169,7 @@ function mostrarResultado(imagenAleatoria) {
 
 
 // Función para actualizar la lista de Coders mostrados en el área correspondiente
-function actualizarListaCodersMostrados() {
+function actualizarListaCodersMostrados(imagenAleatoria) {
   // Obtenemos el área donde mostraremos la lista de Coders
   const listaCodersArea = document.querySelector(".lista-coders");
 
@@ -162,17 +178,38 @@ function actualizarListaCodersMostrados() {
 
   // Recorremos el arreglo de Coders mostrados y creamos elementos de párrafo e imagen para cada uno
   codersMostrados.forEach(coder => {
-    let nuevoElementoNombre = document.createElement("p");
-    nuevoElementoNombre.textContent = coder.nombre;
+    let nuevoElementoContainer = document.createElement("div");
+    nuevoElementoContainer.classList.add("containerMostrar");
 
     let nuevoElementoImagen = document.createElement("img");
     nuevoElementoImagen.src = coder.src;
     nuevoElementoImagen.width = 100;
     nuevoElementoImagen.height = 100;
+    nuevoElementoImagen.classList.add("containerMostrar-img");
 
-    listaCodersArea.appendChild(nuevoElementoNombre);
-    listaCodersArea.appendChild(nuevoElementoImagen);
+    let nuevoElementoNombre = document.createElement("p");
+    nuevoElementoNombre.textContent = coder.nombre;
+
+    nuevoElementoContainer.appendChild(nuevoElementoImagen);
+    nuevoElementoContainer.appendChild(nuevoElementoNombre);
+
+    listaCodersArea.appendChild(nuevoElementoContainer);
   });
+
+}
+
+// Función para reiniciar
+const reiniciarBtn = document.getElementById("reiniciar");
+reiniciarBtn.addEventListener("click", reiniciar) 
+function reiniciar () {
+  window.location.href = "random.html"
+}
+
+// Función para volver al menu
+const menuBtn = document.getElementById("menuBtn");
+menuBtn.addEventListener("click", irMenu) 
+function irMenu () {
+  window.location.href = "index.html"
 }
 
 
