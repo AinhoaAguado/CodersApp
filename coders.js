@@ -1,38 +1,85 @@
 
 
 let coders = [
-    {
-      nombre: 'Victor'
+  { 
+    nombre: "Adriana" 
+  },
+  { 
+    nombre: "Ainhoa" 
+  },
+  { 
+    nombre: "Andrea" 
+  },
+  { 
+    nombre: "Bryan" 
+  },
+  { 
+    nombre: "Cynthia" 
+  },
+  { 
+    nombre: "Diego A" 
+  },
+  { 
+    nombre: "Diego B" 
+  },
+  { 
+    nombre: "Emily" 
+  },
+  { 
+    nombre: "Fernando" 
+  },
+  {
+    nombre: "Geovanny"
     },
-    {
-      nombre: 'Jassed2'
-    },
-    {
-      nombre: 'Jassed3'
-    },
-    {
-      nombre: 'Jassed4'
-    },
-    {
-      nombre: 'Jassed5'
-    },
-    {
-      nombre: 'Jassed6'
-    },
-    {
-      nombre: 'Jassed7'
-    },
-    {
-      nombre: 'Jassed8'
-    },
-    {
-      nombre: 'Jassed9'
-    },
-    {
-      nombre: 'Jassed10'
-    }
-  ];
-  
+  { 
+    nombre: "Gisela" 
+  },
+  { 
+    nombre: "Jaime" 
+  },
+  { 
+    nombre: "Jassed" 
+  },
+  { 
+    nombre: "Jes" 
+  },
+  { 
+    nombre: "Jimmy" 
+  },
+  { 
+    nombre: "Jorge" 
+  },
+  { 
+    nombre: "Luis" 
+  },
+  { 
+    nombre: "Luis" 
+  },
+  { 
+    nombre: "Pedro"
+  },
+  { 
+    nombre: "Raúl" 
+  },
+  { 
+    nombre: "Rubén" 
+  },
+  { 
+    nombre: "Sophia" 
+  },
+  { 
+    nombre: "Thuanny" 
+  },
+  { 
+    nombre: "Víctor" 
+  },
+  { 
+    nombre: "Virginia"
+  },
+  { 
+    nombre: "Wanda" 
+  }
+];
   // Array para almacenar las imágenes disponibles
   let imagenesDisponibles = Array.from(Array(36), (_, index) => index + 1);
   
@@ -70,6 +117,7 @@ let coders = [
       botonEliminar.classList.add("button");
       botonEliminar.addEventListener("click", () => {
         eliminarCoder(coder);
+        
       });
 
       const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");svg.setAttribute("viewBox", "0 0 448 512");svg.classList.add("svgIcon");
@@ -87,12 +135,17 @@ let coders = [
     });
   }
 
+  
+
   function eliminarCoder(coder) {
     const indiceCoder = coders.findIndex(c => c.nombre === coder.nombre);
     coders.splice(indiceCoder, 1);
     mostrarCoders();
   }
+
   
+
+
   // Clase Coder
   class Coder {
     constructor(nombre) {
@@ -114,7 +167,7 @@ let coders = [
       document.getElementById("apellidos").value = "";
     }
   
-    // ...
+ 
   }
   
   coders.forEach(coder => {
@@ -134,7 +187,7 @@ let coders = [
     const ui = new UI();
     ui.addCoder(coder);
 
-    fetch("https://page-backend-api.onrender.com/agregar-datos", {
+    fetch("https://page-backend-api.onrender.com/agregar-datosFormulario", {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json'
