@@ -1,6 +1,6 @@
 # CodersApp
 
-![Random Student Selector](app_icon.png)
+![Random Student Selector](capturasreadme/capturaindex.png)
 
 ## Descripción
 
@@ -14,13 +14,27 @@
 
 ## Capturas de pantalla
 
-![Captura de pantalla 1](screenshots/screenshot1.png)
+![Captura de pantalla 1](capturasreadme/CapturaSELECIONAR.png)
+
+
 *Interfaz principal para seleccionar un alumno aleatorio.*
 
-![Captura de pantalla 2](screenshots/screenshot2.png)
+
+
+
+
+![Captura de pantalla 2](capturasreadme/Capturaañadir.png)
+
+
 *Interfaz para añadir un nuevo alumno a la lista.*
 
-![Captura de pantalla 3](screenshots/screenshot3.png)
+
+
+
+
+![Captura de pantalla 3](capturasreadme/Captureliminar.png)
+
+
 *Interfaz para eliminar un alumno de la lista.*
 
 ## Instrucciones de uso
