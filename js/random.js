@@ -209,7 +209,7 @@ function reiniciar () {
 const menuBtn = document.getElementById("menuBtn");
 menuBtn.addEventListener("click", irMenu) 
 function irMenu () {
-  window.location.href = "index.html"
+  window.location.href = "../index.html"
 }
 
 

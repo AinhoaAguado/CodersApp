@@ -164,7 +164,6 @@ let coders = [
   
       // Limpiar los campos del formulario
       document.getElementById("name").value = "";
-      document.getElementById("apellidos").value = "";
     }
   
  
@@ -180,9 +179,9 @@ let coders = [
     e.preventDefault();
   
     let name = document.getElementById("name").value;
-    let apellidos = document.getElementById("apellidos").value;
+   
   
-    let coder = new Coder(name, apellidos);
+    let coder = new Coder(name);
   
     const ui = new UI();
     ui.addCoder(coder);
