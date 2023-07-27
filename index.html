@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-    <script defer src="index.js"></script>
 </head>
 
 <body>
@@ -33,9 +32,9 @@
             También te lo solucionamos.
         </p>
 
-        <section class="mainIndex__container">
+        <section >
             <div class="mainIndex__section">
-                <a href="coders.html">
+                <a class="mainIndex__container" href="coders.html">
                     <div class="mainIndex__section__img">
                         <img src="img/btnIndex/coders 2.png" alt="avatar">
                     </div>
@@ -74,8 +73,14 @@
                     </div>
                 </a>
             </div>
+
+            <div class="audioBtnIndex">
+                <audio src="./Audios/mario-coin.mp3" id="marioIndexBtnSound"></audio>
+            </div>
+
         </section>
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>

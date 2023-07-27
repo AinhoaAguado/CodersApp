@@ -148,7 +148,9 @@ function mostrarResultado(imagenAleatoria) {
 
   // Agregamos el nombre al documento HTML
   resultadoArea.appendChild(nuevoElementoNombre);
+  confetti();
 }
+
 
 // Función para actualizar la lista de Coders mostrados en el área correspondiente
 function actualizarListaCodersMostrados() {
@@ -172,3 +174,18 @@ function actualizarListaCodersMostrados() {
     listaCodersArea.appendChild(nuevoElementoImagen);
   });
 }
+
+
+//confeti
+function confetti(){
+  const canvas = document.getElementById('#confetti')
+  const jsConfetti = new JSConfetti({ canvas })
+  jsConfetti.addConfetti()
+  }
+
+
+
+
+
+
+

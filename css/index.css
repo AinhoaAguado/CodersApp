@@ -38,6 +38,7 @@
     border-radius: 20px;
     transition: .4s;
     background-color: transparent;
+    padding: 0 50px;
 }
 
 .mainIndex__section a:hover {
@@ -83,6 +84,7 @@
         padding: 0 0 2em 0;
         line-height: 1.3em;
         text-align: center;
+        width: 70vw;
     }
 
     .mainIndex__container {
