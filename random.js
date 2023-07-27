@@ -1,4 +1,3 @@
-
 // Creamos una variable global para almacenar los datos del servidor
 let arraydatos = [];
 
@@ -78,6 +77,9 @@ function cargarMostrarImagenAleatoria() {
   const tiempoEspera = 3000; // 3 segundos
   reproducirSuspenso();
   setTimeout(function() {
+    document.getElementById("animacionPreviaLoader").style.display = "none";
+  },700);
+  setTimeout(function() {
     // Ocultamos la animación de carga
     document.querySelector(".loader").style.display = "none";
     // Obtenemos un índice aleatorio para seleccionar una imagen
@@ -112,6 +114,7 @@ btn.addEventListener("click", async function(){
  await obtenerDatosDelServidor(url);
  actualizarListaCodersMostrados();
  cargarMostrarImagenAleatoria();
+ 
 });
 
 // Función para generar un número entero aleatorio dentro de un rango
@@ -190,11 +193,3 @@ menuBtn.addEventListener("click", irMenu)
 function irMenu () {
   window.location.href = "index.html"
 }
-
-
-/*
-let deleteImg = getElementsById("animacionPreviaLoader");
-btn.addEventListener("click", deleteImgPrevia)
-function deleteImgPrevia () {
-  document.getElementsById("animacionPreviaLoader").style.display = "none";
-}*/
