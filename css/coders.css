@@ -9,6 +9,11 @@
   text-align: center;
 }
 
+.add__form-form {
+  text-align: center;
+  vertical-align: auto;
+}
+
 .add__form-form input{
   text-decoration: none;
   color: black;
@@ -37,12 +42,14 @@
   margin-top: 10%;
   background: linear-gradient(#F67221, #884D34);
   color: white;
-  max-width: 200px;
-  min-width: 100px;
   border-radius: 10px;
   border: 0;
   padding: 5%;
   font-family: 'Overpass Mono', monospace;
+  width: 150px;
+  height: 15px;
+  text-decoration: none;
+
 }
 
 .button {
@@ -115,7 +122,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width: 100px;
+  width: 150px;
   height: 15px;
   border-radius: 10px;
   border: none;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CodersApp.Añade o elimina a un coder</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/coders.css">
@@ -22,7 +22,7 @@
             </p>
             </div>
         <div class="boton">
-            <button class="btn-add"><a id="btnFormulario" class="formu" href="#formulario">Añadir</a></button>
+          <a class="btn-add añadir" id="btnFormulario" class="formu" href="#formulario">Añadir</a>
          </div>
          <div id="contenedor-coders"></div>
      
@@ -52,13 +52,18 @@
                     />
                   </li>
                   <div class="add__section__button">
-                        <input class="add__button" type="submit" value="Añadir"/>
+                        <input class="add__button añadir" type="submit" value="Añadir"/>
                   
                   </div>
                   </ul>
                 </form>
               </div>
             </section>
+
+              <div class="containerAudio__section">
+                  <audio src="../Audios/mario-mario-touch-enemy.mp3" id="audioEliminar"></audio>
+                  <audio src="../Audios/mario-bros-1-up.mp3" id="audioAñadir"></audio>
+              </div>
      
           <script src="../js/coders.js"></script>
   </body>

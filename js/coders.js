@@ -221,9 +221,23 @@ fetch("https://page-backend-api.onrender.com/agregar-datos", {
   })
 });
 
-
-
-
   mostrarCoders();
 
-  
+
+  //audio btn añadir
+  let btnAñadir =document.querySelectorAll(".añadir");
+  let btnEliminar = document.querySelectorAll(".button");
+
+  let audioAñadir = document.getElementById('audioAñadir');
+  let audioEliminar = document.getElementById('audioEliminar');
+
+  btnAñadir.forEach(el => el.addEventListener("mouseover", añadirAudio));
+  function añadirAudio() {
+    audioAñadir.play();
+  }
+
+
+  btnEliminar.forEach(el => el.addEventListener("mouseover", eliminarAudio));
+  function eliminarAudio() {
+    audioEliminar.play();
+  }

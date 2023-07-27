@@ -65,6 +65,7 @@ strong{
     font-family: 'Overpass Mono', monospace;
 }
 
+/* animación imagen previa */
 #animacionPreviaLoader {
   display: block;
   position: absolute;
@@ -77,7 +78,21 @@ strong{
   border: 6px solid #622C76;
   border-radius: 50%;
 }
-
+.image-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.magnifier {
+  position: absolute;
+  display: none;
+  width: 100px; /* Ancho de la lupa */
+  height: 100px; /* Altura de la lupa */
+  border: 2px solid #F67221;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Evitar interacción con la lupa */
+}
 
 .seleccionadoName {
   margin: .3em;

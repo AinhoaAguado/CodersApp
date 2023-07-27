@@ -198,29 +198,80 @@ function actualizarListaCodersMostrados(imagenAleatoria) {
 
 }
 
+//lupa imagen
+const imageContainer = document.querySelector(".image-container");
+const magnifier = document.querySelector(".magnifier");
+const image = imageContainer.querySelector("img");
+
+imageContainer.addEventListener("mousemove", function(event) {
+  const rect = imageContainer.getBoundingClientRect();
+  const offsetX = event.clientX - rect.left;
+  const offsetY = event.clientY - rect.top;
+
+  const posX = offsetX - magnifier.offsetWidth / 2;
+  const posY = offsetY - magnifier.offsetHeight / 2;
+
+  const minX = 0;
+  const minY = 0;
+  const maxX = imageContainer.offsetWidth - magnifier.offsetWidth;
+  const maxY = imageContainer.offsetHeight - magnifier.offsetHeight;
+  const limitedPosX = Math.min(Math.max(posX, minX), maxX);
+  const limitedPosY = Math.min(Math.max(posY, minY), maxY);
+
+  magnifier.style.left = limitedPosX + "px";
+  magnifier.style.top = limitedPosY + "px";
+  
+   const bgPosX = -(limitedPosX * 4); 
+   const bgPosY = -(limitedPosY * 4); 
+
+  magnifier.style.backgroundImage = `url("${image.src}")`;
+  magnifier.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
+});
+
+imageContainer.addEventListener("mouseleave", function() {
+  magnifier.style.display = "none";
+  imageContainer.style.cursor = "default";
+});
+
+imageContainer.addEventListener("mouseenter", function() {
+  magnifier.style.display = "block";
+});
+
+imageContainer.addEventListener("mouseleave", function() {
+  magnifier.style.display = "none";
+});
+
+
 // Función para reiniciar
 const reiniciarBtn = document.getElementById("reiniciar");
-reiniciarBtn.addEventListener("click", reiniciar) 
+reiniciarBtn.addEventListener("click", reiniciar);
 function reiniciar () {
-  window.location.href = "random.html"
+  window.location.href = "random.html";
 }
 
 // Función para volver al menu
 const menuBtn = document.getElementById("menuBtn");
-menuBtn.addEventListener("click", irMenu) 
+menuBtn.addEventListener("click", irMenu) ;
 function irMenu () {
-  window.location.href = "../index.html"
+  window.location.href = "../index.html";
 }
 
 
 //confeti
 function confetti(){
-  const canvas = document.getElementById('#confetti')
-  const jsConfetti = new JSConfetti({ canvas })
-  jsConfetti.addConfetti()
+  const canvas = document.getElementById('#confetti');
+  const jsConfetti = new JSConfetti({ canvas });
+  jsConfetti.addConfetti();
   }
 
 
+  //audio mouseOver Btns
+  let audioButtons = document.querySelectorAll(".btn-inicio");
+  let audioIndexTuberia = document.getElementById('btnRandomAudioTuberia');
+  audioButtons.forEach(el => el.addEventListener("mouseover", activarAudioIndexTuberia));
+  function activarAudioIndexTuberia() {
+    audioIndexTuberia.play();
+  }
 
 
 
