@@ -73,7 +73,8 @@ function cargarMostrarImagenAleatoria() {
     // Creamos un setTimeout para mostrar el mensaje de alerta después de 3 segundos
     alertTimeout = setTimeout(function() {
       alert("No hay más coders disponibles");
-    }, 1000); // 3 segundos
+      window.location.href = "../index.html"
+    }, 1000); // 1 segundos
 
     // Restablecemos el buffer solo si no se han mostrado todos los coders disponibles
     if (codersMostrados.length !== arraydatos.length) {
