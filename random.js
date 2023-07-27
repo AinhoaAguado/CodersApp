@@ -2,18 +2,36 @@
 let arraydatos = [];
 
 // Función para obtener los datos del servidor y guardarlos en la variable global
-function obtenerDatosDelServidor() {
+async function obtenerDatosDelServidor() {
   const url = "https://page-backend-api.onrender.com/datos";
-  fetch(url)
-    .then(res => res.json())
-    .then(datos => {
-      arraydatos = datos;
-      console.log(arraydatos);
+  try {
+    const res = await fetch(url);
+    const datos = await res.json();
 
-      // Una vez que los datos se han cargado, habilitamos el botón
-      const button = document.getElementById("btn-seleccion");
-      button.disabled = false;
-    });
+    // Almacenamos los datos en la variable global arraydatos
+    arraydatos = datos;
+
+    // Barajamos el array y lo almacenamos en bufferImagenes
+    bufferImagenes = barajarArray([...arraydatos]);
+
+    // Mostramos los datos en la consola
+    console.log(arraydatos);
+
+    // Una vez que los datos se han cargado, habilitamos el botón
+    const button = document.getElementById("btn-seleccion");
+    button.disabled = false;
+  } catch (error) {
+    console.error("Error al obtener los datos:", error);
+  }
+}
+
+// Función para barajar un array en su lugar usando el algoritmo Fisher-Yates
+function barajarArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 // Llamamos a la función para obtener los datos del servidor cuando se cargue la página
