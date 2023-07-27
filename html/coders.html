@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodersApp.Añade o elimina a un coder</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/coders.css">
+</head>
+<body>
+  <header id="index" class="headerIndex">
+    <nav class="headerIndex__nav">
+        <a href="../index.html">Coders<span>App</span></a>
+    </nav>
+</header>
+    <main class="main">
+              <div class="contenido">
+            <h1 class="title">Lista de <strong>Coders</strong></h1>
+            <p class="texto">
+                Añade o elimina un Coder.
+            </p>
+            </div>
+        <div class="boton">
+          <a class="btn-add añadir" id="btnFormulario" class="formu" href="#formulario">Añadir</a>
+         </div>
+         <div id="contenedor-coders"></div>
+     
+        <section class="add">
+              <div class="add__title">
+                <h2 class="first">Añadir&nbsp;</h2>
+                <h2 class="second">Coder</h2>
+              </div>
+     
+            <div class="card">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+     
+            <form id="formulario" class="add__form-form">
+     
+                <ul>
+                  <li>
+                    <label for="name">Nombre:</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="coder_name"
+                        placeholder="Nombre"
+                        autocomplete="on"
+                    />
+                  </li>
+                  <div class="add__section__button">
+                        <input class="add__button añadir" type="submit" value="Añadir"/>
+                  
+                  </div>
+                  </ul>
+                </form>
+              </div>
+            </section>
+
+              <div class="containerAudio__section">
+                  <audio src="../Audios/mario-mario-touch-enemy.mp3" id="audioEliminar"></audio>
+                  <audio src="../Audios/mario-bros-1-up.mp3" id="audioAñadir"></audio>
+              </div>
+     
+          <script src="../js/coders.js"></script>
+  </body>
+</html>

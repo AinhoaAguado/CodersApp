@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodersApp. Selecciona un coder de forma aleatoria</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/random.css">
+    
+</head>
+<body>
+    <header id="index" class="headerIndex">
+        <nav class="headerIndex__nav">
+            <a href="../index.html">Coders<span>App</span></a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="audio">
+            <audio src="../Audios/mario-fall.mp3" id="mario"></audio>
+            <audio src="../Audios/musica-suspenso- .mp3" id="suspenso"></audio>
+        </div>
+
+        
+
+
+        <div class="contenido">
+            <h1 class="title">Coder <strong>Elegido</strong></h1>
+            <p class="texto">
+                Selecciona un Coder de forma aleatoria.
+            </p>
+            <div class="resultado">
+            </div>
+        </div>
+        
+        <div id="animacionPreviaLoader" class="image-container">
+            <div class="magnifier"></div>
+            <img src="../img/avatares-behance.png" alt="imagen avatares">
+        </div>
+
+
+        
+
+
+        <div class="loader">
+            <!--codigo intento alert redireccion-->
+            
+
+            <!-- Código de la animación -->
+            <div class="box box0">
+                <div></div>
+            </div>
+            <div class="box box1">
+                <div></div>
+            </div>
+            <div class="box box2">
+                <div></div>
+            </div>
+            <div class="box box3">
+                <div></div>
+            </div>
+            <div class="box box4">
+                <div></div>
+            </div>
+            <div class="box box5">
+                <div></div>
+            </div>
+            <div class="box box6">
+                <div></div>
+            </div>
+            <div class="box box7">
+                <div></div>
+            </div>
+            <div class="ground">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="btnsContainer">
+            <button id="btn-seleccion" class="btn-inicio seleccion">Selecciona al elegido</button>
+            <div class="btnsReinicioMenu">
+                <button id="reiniciar" class="home btn-inicio tamaño2botones">Reiniciar</button>
+                <button id="menuBtn" class="home btn-inicio tamaño2botones">Menú</button>
+            </div>
+      </div>
+        <div class="lista-coders">
+            <!-- Aquí se mostrará la lista de Coders que ya han aparecido -->
+        </div>
+    </section>
+
+    <audio src="../Audios/mario-mario-touch-enemy.mp3" id="btnRandomAudioTuberia"></audio>
+
+    <canvas id="confetti"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script type="module" src="../js/random.js"></script>
+</body>
+</html>

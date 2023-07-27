@@ -3,7 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--white-color);
+    font-family: 'Overpass Mono', monospace;
+
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500;600;700&display=swap");
 
 :root {
     --primary-color: #F67221;
@@ -12,59 +17,44 @@
     --white-color: white;
     --degree-primary: linear-gradient(180deg, #F67221, #884D34);
     --degree-secondary: linear-gradient(180deg, #622C76, #8B5094);
-    --bg-color: black;
+    --bg-color: #282828;
 
-    --font-family: "sans-serif";
-    --fontS-title: 1.6rem;
-    --fontS-text: 1.2rem;
+    --font-family: 'Overpass Mono', monospace;
+    --fontS-title: 1.5rem;
+    --fontS-subtitle: 1.1rem;
+    --fontS-links: 1rem;
 
     --padding-btn: 0.8em;
     --border-radius-btn: 10px;
 }
 
-body {
-    display: grid;
-    grid-template-areas: 
-    "title",
-    "sectionCoders",
-    "sectionAddDelete",
-    "sectionSelect",
-    "SectionGroups"
-}
-
-
-nav {
+.headerIndex {
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
     background: var(--degree-secondary);
-    padding: 0.7em 2em;
+    height: 7vh;
+    scroll-padding-top: 7vh;
+  }
+ 
+  .headerIndex__nav a{
+  text-decoration: none;
+  font-size: var(--fontS-title);
 }
-.title {
-    grid-area: "title";
-}
-.txtDestacado{
-    color: var(--primary-color);
-}
+  .headerIndex__nav a span{
+ color: var(--primary-color);
+  }
 
-.mainIndex {
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--bg-color);
-}
-.title {
-    color: var(--white-color);
-    font-size: var(--fontS-title);
-    margin-bottom: 30px;
-}
-
-.mainIndex__section {
-    height: 20vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.mainIndex__section img {
-    height: 8em;
-}
+  body{
+    background-image:  linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.5)
+    ),
+    url(../img/mariobackground.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center; 
+    color: var(--white-color);    
+  }
